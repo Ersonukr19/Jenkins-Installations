@@ -14,9 +14,12 @@ Install Jenkins, configure Docker as agent, set up cicd, deploy applications to 
 
 <img width="994" alt="Screenshot 2023-02-01 at 12 37 45 PM" src="https://user-images.githubusercontent.com/43399466/215974891-196abfe9-ace0-407b-abd2-adcffe218e3f.png">
 
-### 1 install jenkins through Docker in 3 commands.
+## 1 install jenkins through Docker in 3 commands.
+
+Run the below command to Install Docker
 install Docker
 ```
+sudo apt update
 sudo apt install docker.io -y
 ```
 pull Jenkins from docker hub.
@@ -27,7 +30,19 @@ run jenkins
 ```
 sudo docker run -d -p 8080:8080 jenkins/jenkins:latest
 ```
+ 
+### Grant Jenkins user and Ubuntu user permission to docker deamon.
 
+```
+sudo use for normal user otherwise you can change to superuser/Root with su -i 
+usermod -aG docker jenkins $USER
+usermod -aG docker ubuntu $USER
+systemctl restart docker
+```
+
+Once you are done with the above steps, it is better to restart Jenkins.
+
+The docker agent configuration is now successful.
 ### Login to Jenkins using the below URL:
 
 http://<ec2-instance-public-ip-address>:8080    [You can get the ec2-instance-public-ip-address from your AWS EC2 console page]
@@ -126,32 +141,6 @@ Jenkins Installation is Successful. You can now starting using the Jenkins
 
 Wait for the Jenkins to be restarted.
 
-
-## Docker Slave Configuration
-
-Run the below command to Install Docker
-
-```
-sudo apt update
-sudo apt install docker.io -y
-```
- 
-### Grant Jenkins user and Ubuntu user permission to docker deamon.
-
-```
-sudo use for normal user otherwise you can change to superuser/Root with su -i 
-usermod -aG docker jenkins $USER
-usermod -aG docker ubuntu $USER
-systemctl restart docker
-```
-
-Once you are done with the above steps, it is better to restart Jenkins.
-
-```
-http://<ec2-instance-public-ip>:8080/restart
-```
-
-The docker agent configuration is now successful.
 
 
 
