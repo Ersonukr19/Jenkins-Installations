@@ -30,10 +30,9 @@ sudo docker run -d -p 8080:8080 jenkins/jenkins:latest
 
 ### Login to Jenkins using the below URL:
 
-http://<ec2-instance-public-ip-address>:8080 
+http://<ec2-instance-public-ip-address>:8080    [You can get the ec2-instance-public-ip-address from your AWS EC2 console page]
 
-
-### 2 - Install Jenkins.
+### 2 - Install Jenkins normal.
 
 Pre-Requisites:
  - Java (JDK)
