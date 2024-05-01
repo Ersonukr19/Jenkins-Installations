@@ -17,7 +17,7 @@ Install Jenkins, configure Docker as agent, set up cicd, deploy applications to 
 ### 1 install jenkins through Docker in 3 commands.
 install Docker
 ```
-sudo apt install dokcer.io -y
+sudo apt install docker.io -y
 ```
 pull Jenkins from docker hub.
 ```
