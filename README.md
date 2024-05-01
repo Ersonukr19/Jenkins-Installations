@@ -14,7 +14,7 @@ Install Jenkins, configure Docker as agent, set up cicd, deploy applications to 
 
 <img width="994" alt="Screenshot 2023-02-01 at 12 37 45 PM" src="https://user-images.githubusercontent.com/43399466/215974891-196abfe9-ace0-407b-abd2-adcffe218e3f.png">
 
-### 1 throue Docker
+### 1 install jenkins through Docker in 3 commands.
 install Docker
 ```
 sudo apt install dokcer.io -y
@@ -23,10 +23,15 @@ pull Jenkins from docker hub.
 ```
 sudo docker pull jenkins/jenkins  
 ```
-run jenkins in 
+run jenkins 
 ```
-sudo docker run -d -p 8080:8080 jenkins/jenkins:latest  *** Run Jenkins***
+sudo docker run -d -p 8080:8080 jenkins/jenkins:latest
 ```
+
+### Login to Jenkins using the below URL:
+
+http://<ec2-instance-public-ip-address>:8080 
+
 
 ### 2 - Install Jenkins.
 
