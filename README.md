@@ -39,6 +39,10 @@ usermod -aG docker jenkins $USER
 usermod -aG docker ubuntu $USER
 systemctl restart docker
 ```
+### For pasword of jenkins
+```
+Docker logs
+```
 
 Once you are done with the above steps, it is better to restart Jenkins.
 
